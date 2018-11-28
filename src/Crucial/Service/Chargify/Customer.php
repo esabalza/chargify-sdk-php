@@ -360,4 +360,8 @@ class Customer extends AbstractEntity
 
         return $return;
     }
+
+    public function sayHello(){
+        echo "Hello";
+    }
 }
