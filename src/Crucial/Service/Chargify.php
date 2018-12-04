@@ -17,6 +17,7 @@
 
 namespace Crucial\Service;
 
+use Crucial\Service\Chargify\PaymentProfile;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Request;
@@ -343,5 +344,14 @@ class Chargify
     public function stats()
     {
         return new Stats($this);
+    }
+
+    /**
+     * Helper for instantiating an instance of PaymentProfile
+     * @return PaymentProfile
+     */
+    public function paymentProfile()
+    {
+        return new PaymentProfile($this);
     }
 }
