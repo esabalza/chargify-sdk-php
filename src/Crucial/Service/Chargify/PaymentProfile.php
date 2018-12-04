@@ -128,4 +128,14 @@ class PaymentProfile extends AbstractEntity{
         return $responseArray[0];
     }
 
+    /**
+     * Parse data
+     * @param $data
+     * @return PaymentProfile
+     */
+    public function parse($data){
+        $this->_data = $data;
+        return $this;
+    }
+
 }
