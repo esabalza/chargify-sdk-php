@@ -79,4 +79,30 @@ class PaymentProfile extends AbstractEntity{
         return $this;
     }
 
+
+    /**
+     * Create a new PaymentProfile
+     *
+     * @return PaymentProfile
+     */
+    public function create()
+    {
+        $service = $this->getService();
+        $rawData = $this->getRawData(
+            array(
+                'payment_profile' => $this->getParams()
+            )
+        );
+        $response      = $service->request('payment_profiles', 'POST', $rawData);
+        $responseArray = $this->getResponseArray($response);
+
+        if (!$this->isError()) {
+            $this->_data = $responseArray['payment_profile'];
+        } else {
+            $this->_data = array();
+        }
+
+        return $this;
+    }
+
 }
