@@ -142,7 +142,7 @@ class PaymentProfile extends AbstractEntity{
         $response      = $service->request('payment_profiles', 'GET', NULL, $this->getParams());
         $responseArray = $this->getResponseArray($response);
 
-        if($this->isError()){
+        if($this->isError() && isset($responseArray[0])){
             throw new \Exception("Unknown exception while getting payment profiles by payee");
         }
 
