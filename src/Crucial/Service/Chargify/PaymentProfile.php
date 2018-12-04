@@ -105,4 +105,27 @@ class PaymentProfile extends AbstractEntity{
         return $this;
     }
 
+
+    /**
+     * List all the payment profiles by customer id
+     * @param $customerId
+     * @return array
+     * @throws \Exception
+     */
+    public function listPaymentProfilesByCustomerId($customerId)
+    {
+        $service = $this->getService();
+
+        $this->setParam('customer_id', $customerId);
+
+        $response      = $service->request('payment_profiles', 'GET', NULL, $this->getParams());
+        $responseArray = $this->getResponseArray($response);
+
+        if($this->isError()){
+            throw new \Exception("Unknown exception while getting payment profiles by payee");
+        }
+
+        return $responseArray;
+    }
+
 }
