@@ -125,7 +125,7 @@ class PaymentProfile extends AbstractEntity{
             throw new \Exception("Unknown exception while getting payment profiles by payee");
         }
 
-        return $responseArray;
+        return $responseArray[0];
     }
 
 }
