@@ -4,6 +4,27 @@ namespace Crucial\Service\Chargify;
 class PaymentProfile extends AbstractEntity{
 
     /**
+     * Sets the masked card number
+     * @param $maskedCardNumber
+     * @return $this
+     */
+    public function setMaskedCardNumber($maskedCardNumber){
+        $this->setParam('masked_card_number', $maskedCardNumber);
+        return $this;
+    }
+
+
+    /**
+     * Sets the id
+     * @param $id
+     * @return $this
+     */
+    public function setId($id){
+        $this->setParam('id', $id);
+        return $this;
+    }
+
+    /**
      * @param $cvv
      * @return $this
      */
