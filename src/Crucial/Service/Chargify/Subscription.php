@@ -19,6 +19,19 @@ namespace Crucial\Service\Chargify;
 
 class Subscription extends AbstractEntity
 {
+
+
+    /**
+     * Sets the offer id
+     * @param $offerId
+     *
+     * @return $this
+     */
+    public function setOfferId($offerId){
+        $this->setParam('offer_id', $offerId);
+        return $this;
+    }
+
     /**
      * The API Handle of the product for which you are creating a subscription
      * or migrating to. Required, unless a product_id is given instead.
@@ -30,7 +43,6 @@ class Subscription extends AbstractEntity
     public function setProductHandle($handle)
     {
         $this->setParam('product_handle', $handle);
-
         return $this;
     }
 
