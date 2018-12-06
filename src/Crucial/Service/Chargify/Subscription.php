@@ -23,6 +23,17 @@ class Subscription extends AbstractEntity
 
     /**
      * Sets the offer id
+     *
+     * @param $paymentProfileId
+     * @return $this
+     */
+    public function setPaymentProfileId($paymentProfileId){
+        $this->setParam('payment_profile_id', $paymentProfileId);
+        return $this;
+    }
+
+    /**
+     * Sets the offer id
      * @param $offerId
      *
      * @return $this
