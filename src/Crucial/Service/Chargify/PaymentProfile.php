@@ -26,6 +26,59 @@ class PaymentProfile extends AbstractEntity{
 
 
     /**
+     * @param  $billingAddress
+     * @return $this
+     */
+    public function setBillingAddress($billingAddress){
+        $this->setParam('billing_address', $billingAddress);
+        return $this;
+    }
+
+
+
+    /**
+     * @param $billingCity
+     * @return $this
+     */
+    public function setBillingCity($billingCity){
+        $this->setParam('billing_city', $billingCity);
+        return $this;
+    }
+
+    /**
+     * @param $billingCountry
+     * @return $this
+     */
+    public function setBillingCountry($billingCountry){
+        $this->setParam('billing_country', $billingCountry);
+        return $this;
+    }
+
+
+    /**
+     * @param $billingZip
+     * @return $this
+     */
+    public function setBillingZip($billingZip){
+        $this->setParam('billing_zip', $billingZip);
+        return $this;
+    }
+
+
+    /**
+     * @param $billingState
+     * @return $this
+     */
+    public function setBillingState($billingState){
+        $this->setParam('billing_state', $billingState);
+        return $this;
+    }
+
+
+
+
+
+    /**
      * Sets the vault token
      * @param  $currentVault
      * @return $this
