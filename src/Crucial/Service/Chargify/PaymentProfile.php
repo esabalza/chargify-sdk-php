@@ -13,6 +13,16 @@ class PaymentProfile extends AbstractEntity{
         return $this;
     }
 
+    /**
+     * Sets the last four digits
+     * @param $lastFour
+     * @return $this
+     */
+    public function setLastFour($lastFour){
+        $this->setParam('last_four', $lastFour);
+        return $this;
+    }
+
 
     /**
      * Sets the vault token
