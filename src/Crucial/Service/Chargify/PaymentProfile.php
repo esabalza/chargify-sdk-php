@@ -15,6 +15,28 @@ class PaymentProfile extends AbstractEntity{
 
 
     /**
+     * Sets the vault token
+     * @param  $vaultToken
+     * @return $this
+     */
+    public function setVaultToken($vaultToken){
+        $this->setParam('vault_token', $vaultToken);
+        return $this;
+    }
+
+
+    /**
+     * Sets the vault token
+     * @param  $currentVault
+     * @return $this
+     */
+    public function setCurrentVault($currentVault){
+        $this->setParam('current_vault', $currentVault);
+        return $this;
+    }
+
+
+    /**
      * Sets the id
      * @param $id
      * @return $this
